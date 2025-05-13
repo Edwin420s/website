@@ -1,0 +1,25 @@
+// Search blog posts
+function searchPosts() {
+    let input = document.getElementById('search').value.toLowerCase();
+    let posts = document.querySelectorAll('.post');
+
+    posts.forEach(post => {
+        let title = post.querySelector('h2').textContent.toLowerCase();
+        post.style.display = title.includes(input) ? '' : 'none';
+    });
+}
+
+// Form validation
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    alert("Message sent successfully!");
+    return true;
+}
